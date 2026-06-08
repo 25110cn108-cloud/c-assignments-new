@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+bool isPerfect(int n) {
+    if (n <= 1) return false; // Perfect numbers are greater than 1
+    int sum = 0;
+    for (int i = 1; i <= n / 2; i++) {
+        if (n % i == 0) {
+            sum += i; // Add the divisor to the sum
+        }
+    }
+    return sum == n; // A perfect number is equal to the sum of its proper divisors
+}
+int main() {
+    int num = 28; // Example number to check
+    if (isPerfect(num)) 
+        cout << num << " is a Perfect Number" << endl;
+    else
+        cout << num << " is not a Perfect Number" << endl;
+    return 0;
+}
