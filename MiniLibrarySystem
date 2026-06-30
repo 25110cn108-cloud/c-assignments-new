@@ -1,0 +1,39 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    int n;
+
+    cout << "Enter the number of books: ";
+    cin >> n;
+
+    int bookID[50];
+    string title[50], author[50];
+
+    // Input book details
+    for (int i = 0; i < n; i++) {
+        cout << "\nBook " << i + 1 << endl;
+
+        cout << "Enter Book ID: ";
+        cin >> bookID[i];
+
+        cin.ignore(); // Clear input buffer
+
+        cout << "Enter Book Title: ";
+        getline(cin, title[i]);
+
+        cout << "Enter Author Name: ";
+        getline(cin, author[i]);
+    }
+
+    // Display library records
+    cout << "\n----- Library Records -----\n";
+    cout << "Book ID\tTitle\t\tAuthor\n";
+
+    for (int i = 0; i < n; i++) {
+        cout << bookID[i] << "\t" << title[i] << "\t\t" << author[i] << endl;
+    }
+
+    return 0;
+}
